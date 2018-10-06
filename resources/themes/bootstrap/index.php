@@ -96,8 +96,7 @@
 
                 <?php foreach($dirArray as $name => $fileInfo): ?>
                     <li data-name="<?php echo $name; ?>" data-href="<?php echo $fileInfo['url_path']; ?>">
-                        <a href="<?php echo $fileInfo['url_path']; ?>" class="clearfix" data-name="<?php echo $name; ?>">
-
+                        <a href="<?php echo $fileInfo['url_path']; ?>" class="clearfix" data-name="<?php echo $name; ?>" <?php echo in_array($fileInfo['file_ext'], $lister->getMobileDownloadSupportExt()) ? 'download' : '' ?>>
 
                             <div class="row">
                                 <span class="file-name col-md-7 col-sm-6 col-xs-9">

@@ -460,7 +460,8 @@ class DirectoryLister
                             'file_size' => is_dir($realPath) ? '-' : $this->getFileSize($realPath),
                             'mod_time' => date($this->_config['date_format'], filemtime($realPath)),
                             'icon_class' => $iconClass,
-                            'sort' => $sort
+                            'sort' => $sort,
+                            'file_ext' => $fileExt
                         );
                     }
 
@@ -919,4 +920,12 @@ class DirectoryLister
         return $this->_directory;
     }
 
+    /**
+     * 让手机端支持下载某些后缀的文件（主要解决在微信中无法下载压缩文件的问题）
+     * @return mixed
+     */
+    public function getMobileDownloadSupportExt()
+    {
+        return $this->_config['mobile_download_support_ext'];
+    }
 }

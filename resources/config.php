@@ -58,4 +58,13 @@ return array(
         // 'path/to/folder'
     ),
 
+    // 解决手机端无法直接下载压缩文件的问题（特别是在微信中），在此处定义需追加h5下载标识的后缀
+    'mobile_download_support_ext' => [
+        'zip',
+        '7z',
+        'bz',
+        'gz',
+        'rar',
+        'tar',
+    ],
 );
